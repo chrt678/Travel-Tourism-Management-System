@@ -1,0 +1,93 @@
+-- create database you choose the name
+create database t2ms;
+-- use this database
+
+use t2ms;
+DROP TABLE accounts;
+
+-- create table for signup class
+-- Table structure for table 'accounts'
+CREATE TABLE ACCOUNTS (
+    USERNAME VARCHAR(25) PRIMARY KEY NOT NULL,
+    NAME VARCHAR(25) NOT NULL,
+    PASSWORD VARCHAR(25) NOT NULL,
+    SECURITY VARCHAR(25) NOT NULL,
+    ANSWER VARCHAR(25) NOT NULL
+);
+
+show tables;
+select* from ACCOUNTS;
+
+-- create table to add new customer in new customer class
+drop table customer;
+CREATE TABLE customer (
+  username varchar(30) not NULL,
+  id varchar(20)primary key not NULL,
+  number varchar(30) not NULL,
+  name varchar(30) not NULL,
+  gender varchar(20) not NULL,
+  country varchar(30) not NULL,
+  address varchar(30) not NULL,
+  phone varchar(10) not NULL,
+  email varchar(40) not NULL
+);
+
+show tables;
+select* from customer;
+
+-- create table for bookpackage
+
+drop table bookpackage;
+
+CREATE TABLE bookpackage (
+  username varchar(30) NOT NULL,
+  package varchar(30) NOT NULL,
+  persons varchar(30) NOT NULL,
+  id varchar(30) NOT NULL,
+  number varchar(30) NOT NULL,
+  phone varchar(10) PRIMARY KEY NOT NULL,
+  price varchar(20) NOT NULL
+);
+
+show tables;
+select* from bookpackage;
+
+-- create table for bookhotel
+drop table bookhotel;
+CREATE TABLE bookhotel (
+  username varchar(30) NOT NULL,
+  hotel varchar(30) primary KEY ,
+  persons varchar(20) NOT NULL,
+  days varchar(20) NOT NULL,
+  ac varchar(10) NOT NULL,
+  food varchar(10) NOT NULL,
+  id varchar(20) references customer(id),
+  number varchar(20) NOT NULL,
+  phone varchar(10) NOT NULL,
+  cost varchar(20) NOT NULL
+);
+show tables;
+select* from bookpackage;
+
+-- create table to add hotel
+drop table hotel;
+
+CREATE TABLE hotel (
+  name varchar(40) primary key not NULL,
+  cost_per_day varchar(20) NOT NULL,
+  food_charges varchar(20) NOT NULL,
+  ac_charges varchar(20) NOT NULL
+);
+show tables;
+select* from hotel;
+
+-- insert value in the hotel table
+insert into hotel values('JW Marriott Hotel', '2000', '2500', '3000');
+insert into hotel values('The Taj Hotel','2500','2200','4000');
+insert into hotel values('Maurya Hotel','5000','2300','6000');
+insert into hotel values('Shershah Hotel','1000','1200','3000');
+insert into hotel values('The Buddha Hotel','151','1051','10000');
+insert into hotel values('The Marico Hotel','3300','2400','11000');
+insert into hotel values('The Verma Hotel','3000','3200','5000');
+
+
